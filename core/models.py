@@ -10,12 +10,12 @@ class Employee(TimeStampedModel):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    university = models.ForeignKey(verbose_name=u'Университет', on_delete=models.CASCADE)
+    university = models.ForeignKey('core.University', verbose_name=u'Университет', on_delete=models.CASCADE)
 
 
-# class University(TimeStampedModel):
-#     """
-#     Справочник ВУЗов
-#     """
+class University(TimeStampedModel):
+    """
+    Справочник ВУЗов
+    """
 
 
