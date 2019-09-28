@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'core',
     'education',
     'region',
+    'hunter'
 ]
 
 MIDDLEWARE = [
