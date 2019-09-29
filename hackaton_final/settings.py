@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'core',
     'education',
     'region',
-    'hunter'
+    'hunter',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
