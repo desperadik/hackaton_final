@@ -32,27 +32,25 @@
     <header class="main-header">
         <div class="inside-header clearfix">
             <nav class="main-nav" role="navigation">
-                <h2 class="nav-brand"><a href="index.html">
+                <h2 class="nav-brand"><a href=".">
                     <img src="{% static "images/logo-iprof.png" %}" class="max-w-50" ></a>
                 </h2>
 
                 <button class="topbar-toggler" id="mobile_topbar_toggler"><i class="mdi mdi-dots-horizontal"></i></button>
                 <input id="main-menu-state" type="checkbox" />
+
                 <label class="main-menu-btn" for="main-menu-state">
                     <span class="main-menu-btn-icon"></span> Переключатель меню
                 </label>
 
                 <ul id="main-menu" class="sm sm-blue">
-                    <li><a href="#" class="current">Меню</a>
-                        <ul>
-                            <li><a href="#">Кандидаты</a></li>
-                            <li><a href="#">Работадатели</a></li>
-                            <li><a href="#">ВУЗы</a></li>
-                            <li><a href="#">Профессии</a></li>
-                            <li><a href="#">Специальости</a></li>
-                            <li><a href="#">Вакансии</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Кадры</a></li>
+                    <li><a href="#">Работадатели</a></li>
+                    <li><a href="#">ВУЗы</a></li>
+                    <li><a href="#">Профессии</a></li>
+                    <li><a href="#">Специальости</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Стажировки</a></li>
                 </ul>
             </nav>
             <!-- Header Navbar -->
@@ -117,10 +115,22 @@
 <!-- Bootstrap 4.0-->
 <script src="{% static "assets/vendor_components/bootstrap/dist/js/bootstrap.js" %}"></script>
 
+<!-- FLOT CHARTS -->
+<script src="{% static "assets/vendor_components/Flot/jquery.flot.js" %}"></script>
+<script src="{% static "assets/vendor_components/Flot/jquery.flot.resize.js" %}"></script>
+<script src="{% static "assets/vendor_components/Flot/jquery.flot.pie.js" %}"></script>
+<script src="{% static "assets/vendor_components/Flot/jquery.flot.categories.js" %}"></script>
+<script src="{% static "assets/vendor_components/Flot/jquery.flot.time.js" %}"></script>
+
+<!-- apexcharts -->
+<script src="{% static "assets/vendor_components/apexcharts-bundle/irregular-data-series.js" %}"></script>
+<script src="{% static "assets/vendor_components/apexcharts-bundle/dist/apexcharts.js" %}"></script>
+
 
 <script src="{% static "js/jquery.smartmenus.js" %}"></script>
 <script src="{% static "js/menus.js" %}"></script>
 <script src="{% static "js/template.js" %}"></script>
+<script src="{% static "js/dashboard.js" %}"></script>
 
 </body>
 </html>

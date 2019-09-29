@@ -9,19 +9,41 @@
             <div class="content-header">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="d-md-block d-none">
-                        <h3 class="page-title br-0">Рабочий стол Госрегулятора</h3>
+                        <h3 class="page-title br-0">Рабочий стол Государственного регулятора</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- Main content -->
             <section class="content">
                 <div class="row">
+
+                    <div class="col-12 col-xl-5">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">Распределение задействованных кадров по категориям специальностей</h4>
+                            </div>
+                            <div class="box-body">
+                                <div id="flotPie2" class="h-300"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">Выпускники и кадры</h4>
+                            </div>
+                            <div class="box-body">
+                                <div id="uni-attendance"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-xl-3 col-12">
                         <div class="box box-body pb-10 bl-4 border-info pull-up">
                             <h6 class="text-uppercase">НОВЫЕ КАДРЫ</h6>
                             <div class="d-flex justify-content-between">
-                                <span class=" font-size-30">154</span>
+                                <span class=" font-size-30">154К</span>
                                 <span class="font-size-30 text-info mdi mdi-city"></span>
                             </div>
                         </div>
@@ -30,7 +52,7 @@
                         <div class="box box-body pb-10 bl-4 border-primary pull-up">
                             <h6 class="text-uppercase">ПОДТВЕРЖДЕННЫЕ КАДРЫ</h6>
                             <div class="d-flex justify-content-between">
-                                <span class=" font-size-30">412</span>
+                                <span class=" font-size-30">4,7M</span>
                                 <span class="font-size-30 text-primary mdi mdi-seal"></span>
                             </div>
                         </div>
@@ -39,7 +61,7 @@
                         <div class="box box-body pb-10 bl-4 border-danger pull-up">
                             <h6 class="text-uppercase">РАБОТОДАТЕЛИ</h6>
                             <div class="d-flex justify-content-between">
-                                <span class=" font-size-30">125</span>
+                                <span class=" font-size-30">900K</span>
                                 <span class="font-size-30 text-danger mdi mdi-city"></span>
                             </div>
                         </div>
@@ -48,7 +70,7 @@
                         <div class="box box-body pb-10 bl-4 border-warning pull-up">
                             <h6 class="text-uppercase">БЕЗРАБОТНЫЕ</h6>
                             <div class="d-flex justify-content-between">
-                                <span class=" font-size-30">256</span>
+                                <span class=" font-size-30">3,9M</span>
                                 <span class="font-size-30 text-warning mdi mdi-home"></span>
                             </div>
                         </div>
@@ -102,17 +124,15 @@
                     </div>
                 </div>
             </section>
-            <!-- /.content -->
 
             <div class="content-header">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="d-md-block d-none">
-                        <h3 class="page-title br-0" style="color: #000;">Рабочий стол </h3>
+                        <h3 class="page-title br-0" style="color: #000;">Рабочий стол Государственных корпораций</h3>
                     </div>
                 </div>
             </div>
 
-            <!-- Main content -->
             <section class="content">
                 <div class="row">
                     <div class="col-xl-3 col-12">
@@ -200,7 +220,170 @@
                     </div>
                 </div>
             </section>
-            <!-- /.content -->
+
+            <div class="content-header">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-md-block d-none">
+                        <h3 class="page-title br-0" style="color: #000;">Рабочий стол Участника</h3>
+                    </div>
+                </div>
+            </div>
+
+            <section class="content">
+                <div class="row">
+                    <div class="col-xl-3 col-12">
+                        <div class="box box-body pb-10 bl-4 border-info pull-up">
+                            <h6 class="text-uppercase">ПРОСМОТРОВ</h6>
+                            <div class="d-flex justify-content-between">
+                                <span class=" font-size-30">768</span>
+                                <span class="font-size-30 text-info mdi mdi-eye-outline"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-12">
+                        <div class="box box-body pb-10 bl-4 border-primary pull-up">
+                            <h6 class="text-uppercase">В ИЗБРАННОМ</h6>
+                            <div class="d-flex justify-content-between">
+                                <span class=" font-size-30">412</span>
+                                <span class="font-size-30 text-primary mdi mdi-heart"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-12">
+                        <div class="box box-body pb-10 bl-4 border-danger pull-up">
+                            <h6 class="text-uppercase">РЕЙТИНГ</h6>
+                            <div class="d-flex justify-content-between">
+                                <span class=" font-size-30">8.7</span>
+                                <span class="font-size-30 text-danger mdi mdi-chart-bar"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">Мой профиль</h4>
+                            </div>
+                            <!-- /.box-header -->
+                            <form class="form" action="{% url "dashboard_employ_add" %}" method="POST">
+                                {% csrf_token %}
+                                <div class="box-body">
+                                    <h4 class="box-title text-info"><i class="ti-user mr-15"></i> Персональные данные</h4>
+                                    <hr class="mb-15 mt-0">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Имя</label>
+                                                <input type="text" class="form-control" name="firstname" placeholder="Имя">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Фамилия</label>
+                                                <input type="text" class="form-control" name="lastname" placeholder="Фамилия">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label >E-mail</label>
+                                                <input type="text" class="form-control" name="email" placeholder="E-mail">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label >Номер телефона</label>
+                                                <input type="text" class="form-control" name="phone" placeholder="Номер телефона">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="box-title text-info mt-15"><i class="ti-save mr-15"></i> Образование</h4>
+                                    <hr class="mb-15 mt-0">
+
+                                    <div class="form-group">
+                                        <label>Учебное заведение</label>
+                                        <select class="form-control" name="vuz">
+                                            <option>Выберите учебное заведение</option>
+                                            <option value="1">Уральский федеральный университет</option>
+                                            <option value="2">Уральский университет путей сообщения</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Специальность</label>
+                                                <select class="form-control">
+                                                    <option>Interested in</option>
+                                                    <option>design</option>
+                                                    <option>development</option>
+                                                    <option>illustration</option>
+                                                    <option>branding</option>
+                                                    <option>video</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="box-title text-info mt-15"><i class="ti-save mr-15"></i> Карьера</h4>
+                                    <hr class="mb-15 mt-0">
+                                    <div class="form-group">
+                                        <label>Company</label>
+                                        <input type="text" class="form-control" placeholder="Company Name">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Interested in</label>
+                                                <select class="form-control">
+                                                    <option>Interested in</option>
+                                                    <option>design</option>
+                                                    <option>development</option>
+                                                    <option>illustration</option>
+                                                    <option>branding</option>
+                                                    <option>video</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Budget</label>
+                                                <select class="form-control">
+                                                    <option>Budget</option>
+                                                    <option>less than 5000$</option>
+                                                    <option>5000$ - 10000$</option>
+                                                    <option>10000$ - 20000$</option>
+                                                    <option>more than 20000$</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Подтверждение данных об образование</label>
+                                        <label class="file">
+                                            <input type="file" id="file">
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>About Project</label>
+                                        <textarea rows="5" class="form-control" placeholder="About Project"></textarea>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer">
+
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="ti-save-alt"></i> Сохранить
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 {% endblock %}

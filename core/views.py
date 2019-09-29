@@ -30,3 +30,9 @@ class LoginPage(TemplateView, ProcessFormView):
 class DashBoardIndex(TemplateView):
 
     template_name = 'dashboard/index.html'
+
+
+def create_employ(request):
+    if request.method.POST:
+        print(request.POST)
+    pass
