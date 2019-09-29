@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles regions education %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +17,11 @@
         <img src="{% static "images/logo-iprof.png" %}" width="15%" alt="">
         <div>сервис кадровой<br>аналитики</div>
     </div>
-    <div class="service-choice-cont">
-        <a class="service-option" href="#">стажировки</a>
-        <a class="service-option" href="#">актуальный рейтинг</a>
-        <a class="service-option" href="#">вакансии</a>
-    </div>
+    {#    <div class="service-choice-cont">#}
+    {#        <a class="service-option" href="#">стажировки</a>#}
+    {#        <a class="service-option" href="#">актуальный рейтинг</a>#}
+    {#        <a class="service-option" href="#">вакансии</a>#}
+    {#    </div>#}
     <div class="nav-container">
         <div class="contacts-container">
             <div class="phone"><i>
@@ -39,14 +39,24 @@
     <div class="main-info ">
         <h2>Узнай востребованность своей профессии</h2>
     </div>
-    <form>
-    <select name="profile" id=""></select>
+    <form id="getInfoForm">
+    {% get_professions as professions %}
+        <select name="profile" id="">
+            <option>Выберите профессию</option>
+            {% for profession in professions %}
+                <option value="{{ profession }}">{{ profession }}</option>
+            {% endfor %}
+        </select>
+        {% get_regions as regions %}
+        <select name="region" id="">
+            <option>Выберите регион</option>
+            {% for region in regions %}
+                <option value="Russia">{{ region }}</option>
+            {% endfor %}
+        </select>
 
-    <select name="region" id="">
-        <option value="Russia">Россия</option>
-    </select>
-    <button type="submit">Показать</button>
-</form>
+        <button type="submit">Показать</button>
+    </form>
 </main>
 <footer>
     <div class="partner-title">
