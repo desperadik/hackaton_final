@@ -2,7 +2,7 @@
 /****************************/
 /** Imports **/
 /****************************/
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic");
 /*Social Media Colors*/
 /*Theme Colors*/
 /*---reset---*/
@@ -41,17 +41,19 @@ body.layout-boxed {
 body {
     overflow-x: hidden;
     overflow-y: auto;
-    color: #5c6975;
+    color: #232730;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: 'PT Sans', sans-serif;
     line-height: 1.5;
     background-color: #f2f3f8; }
 
 /*---basic---*/
 a {
-    color: #5c6975; }
+    /*color: #5c6975;*/
+    color: #232730;
+}
 
 a:hover, a:active, a:focus {
     outline: 0;
@@ -93,6 +95,17 @@ h1, h2, h3, .h1, .h2, .h3 {
 img {
     max-width: 100%; }
 
+.auth-logo img {
+    width: 50%
+}
+.auth-logo h3 {
+    color: #fff;
+    font-size: 22px;
+    text-align: left;
+}
+.text-white {
+    color: #fff !important;
+}
 .img-fluid {
     width: 100%; }
 
@@ -15245,7 +15258,7 @@ time {
 
 .content-top-agile {
     text-align: center;
-    text-transform: uppercase;
+    text-transform: inherit;
     position: relative; }
 .content-top-agile h2 {
     color: #ffc107;
@@ -15262,8 +15275,9 @@ time {
     overflow-y: scroll; }
 
 .auth-logo {
-    text-align: center;
-    font-weight: 300; }
+    text-align: left;
+    font-weight: 300;
+}
 
 .auth-body {
     padding: 20px 20px 10px; }
@@ -21776,3 +21790,15 @@ button.btn.dropdown-toggle:after {
     background-color: rgba(255, 255, 255, 0.3); }
 .box .datepicker-inline .datepicker-days td.day.new, .box .datepicker-inline .datepicker-days td.day.old, .box .datepicker-inline .datepicker-days > table td.day.new, .box .datepicker-inline .datepicker-days > table td.day.old, .box .datepicker-inline td.day.new, .box .datepicker-inline td.day.old, .box .datepicker-inline > table td.day.new, .box .datepicker-inline > table td.day.old {
     color: #2f363c; }
+.login-block a {
+    font-size: 26px;
+}
+.login-block a img {
+    width: 30%;
+}
+.login-block .login-block__button {
+    border-radius: 16px;
+    border: 1px solid #656262;
+    font-size: 30px;
+    line-height: 47px;
+}

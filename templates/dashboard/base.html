@@ -1,0 +1,126 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="it:Educatory">
+
+    <title>Личный кабинет - iProf</title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="{% static "assets/vendor_components/bootstrap/dist/css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/horizontal-menu.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/skin_color.css" %}">
+
+
+</head>
+
+<body class="layout-top-nav light-skin theme-purple fixed onlywave">
+
+<div class="wrapper">
+    <div class="art-bg">
+        <img src="{% static "images/art1.svg" %}" alt="" class="art-img light-img">
+        <img src="{% static "images/art2.svg" %}" alt="" class="art-img dark-img">
+        <img src="{% static "images/art-bg.svg" %}" alt="" class="wave-img light-img">
+        <img src="{% static "images/art-bg2.svg" %}" alt="" class="wave-img dark-img">
+    </div>
+    <header class="main-header">
+        <div class="inside-header clearfix">
+            <nav class="main-nav" role="navigation">
+                <h2 class="nav-brand"><a href="index.html">
+                    <img src="{% static "images/logo-iprof.png" %}" class="max-w-50" ></a>
+                </h2>
+
+                <button class="topbar-toggler" id="mobile_topbar_toggler"><i class="mdi mdi-dots-horizontal"></i></button>
+                <input id="main-menu-state" type="checkbox" />
+                <label class="main-menu-btn" for="main-menu-state">
+                    <span class="main-menu-btn-icon"></span> Переключатель меню
+                </label>
+
+                <ul id="main-menu" class="sm sm-blue">
+                    <li><a href="#" class="current">Меню</a>
+                        <ul>
+                            <li><a href="#">Кандидаты</a></li>
+                            <li><a href="#">Работадатели</a></li>
+                            <li><a href="#">ВУЗы</a></li>
+                            <li><a href="#">Профессии</a></li>
+                            <li><a href="#">Специальости</a></li>
+                            <li><a href="#">Вакансии</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top icon-topbar hmobile">
+
+                <div class="navbar-custom-menu r-side">
+                    <ul class="nav navbar-nav">
+                        <li class="search-bar">
+                            <div class="lookup lookup-circle lookup-right">
+                                <input type="text" name="search">
+                            </div>
+                        </li>
+                        <!-- User Account-->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="User">
+                                <img src="{% static "images/avatar/7.jpeg" %}" class="user-image rounded-circle" alt="Аватарка пользователя">
+                            </a>
+                            <ul class="dropdown-menu flipInX">
+                                <!-- User image -->
+                                <li class="user-header bg-img" style="background-image: url({% static "images/user-info.jpg" %})" data-overlay="3">
+                                    <div class="flexbox align-self-center">
+                                        <img src="{% static "images/avatar/7.jpeg" %}" class="float-left rounded-circle" alt="{{ request.user }}">
+                                        <h4 class="user-name align-self-center">
+                                            <span>{{ request.user }}</span>
+                                            <small>{{ request.user.email }}</small>
+                                        </h4>
+                                    </div>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ion ion-person"></i> Профиль</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ion ion-settings"></i> Настройки</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)"><i class="ion-log-out"></i> Выход</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="p-10"><a href="javascript:void(0)" class="btn btn-sm btn-rounded btn-success">Мое резюме</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+
+
+<!-- jQuery 3 -->
+<script src="{% static "assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js" %}"></script>
+<!-- Slimscroll -->
+<script src="{% static "assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js" %}"></script>
+
+<!-- popper -->
+<script src="{% static "assets/vendor_components/popper/dist/popper.min.js" %}"></script>
+
+<!-- Bootstrap 4.0-->
+<script src="{% static "assets/vendor_components/bootstrap/dist/js/bootstrap.js" %}"></script>
+
+
+<script src="{% static "js/jquery.smartmenus.js" %}"></script>
+<script src="{% static "js/menus.js" %}"></script>
+<script src="{% static "js/template.js" %}"></script>
+
+</body>
+</html>

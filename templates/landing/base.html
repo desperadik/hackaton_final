@@ -1,0 +1,71 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProfNavigator</title><link rel="stylesheet" href="{% static "css/landing_styles.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "fonts/fonts.css" %}">
+</head>
+<body>
+<header>
+    <div class="title">
+        <img src="{% static "images/logo-iprof.png" %}" width="15%" alt="">
+        <div>сервис кадровой<br>аналитики</div>
+    </div>
+    <div class="service-choice-cont">
+        <a class="service-option" href="#">стажировки</a>
+        <a class="service-option" href="#">актуальный рейтинг</a>
+        <a class="service-option" href="#">вакансии</a>
+    </div>
+    <div class="nav-container">
+        <div class="contacts-container">
+            <div class="phone"><i>
+                <img src="{% static "images/svg/phone-icon.svg" %}" alt="Иконка телефона">
+            </i>+7900 000 00 00
+            </div>
+            <div class="city"><i>
+                <img src="{% static "images/svg/place-marker.svg" %}" alt="Маркер карты">
+            </i>Екатеринбург</div></div><div class="nav-menu">
+        <img src="{% static "images/svg/hamburger-menu.svg" %}" alt="Иконка меню">
+    </div>
+    </div>
+</header>
+<main>
+    <div class="main-info ">
+        <h2>Узнай востребованность своей профессии</h2>
+    </div>
+    <form>
+    <select name="profile" id=""></select>
+
+    <select name="region" id="">
+        <option value="Russia">Россия</option>
+    </select>
+    <button type="submit">Показать</button>
+</form>
+</main>
+<footer>
+    <div class="partner-title">
+        <h3>Наши партнеры</h3>
+    </div>
+    <div class="partner-logoes-wrap">
+        <div class="partner-logo">
+            <img src="{% static "images/mailruLogo.png" %}" alt="">
+        </div>
+        <div class="partner-logo">
+            <img src="{% static "images/logoMegafon.png" %}" alt="">
+        </div>
+        <div class="partner-logo">
+            <img src="{% static "images/logoMts.png" %}" alt="">
+        </div>
+    </div>
+</footer>
+<div class="bg-map">
+    <img src="{% static "images/map.png" %}" alt="Карта России">
+</div>
+</body>
+</html>

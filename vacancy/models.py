@@ -62,10 +62,6 @@ class Profession(TimeStampedModel):
     def cnt_vacancy(self):
         return self.vacancy_set.count()
 
-    # def top(self, many_days=180):
-    #     """Топ 10 проффесий за последние полгода"""
-    #     return get_top10(many_days)
-
 
 class Vacancy(TimeStampedModel):
 
