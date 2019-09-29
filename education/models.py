@@ -1,7 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-
-# Create your models here.
 from core.models import AbstractOrg
 from hunter.models import Career
 from region.models import Region
