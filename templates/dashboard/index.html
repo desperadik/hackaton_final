@@ -1,6 +1,6 @@
 {% extends 'dashboard/base.html' %}
 
-{% load employess %}
+{% load employess education  %}
 
 {% block content %}
     <div class="content-wrapper">
@@ -90,7 +90,7 @@
                                             <th>Идентификатор</th>
                                             <th>ВУЗ</th>
                                             <th>Специальность</th>
-                                            <th>Дата внесения</th>
+                                            <th>Год окончания</th>
                                             <th>Статус</th>
                                             <th>Действия</th>
                                         </tr>
@@ -100,12 +100,12 @@
 
                                         {% for employee in employees %}
                                             <tr>
-                                                <td>Minol Jov</td>
-                                                <td>#8457125</td>
-                                                <td>Shop</td>
-                                                <td>Sold</td>
-                                                <td>10-7-2019</td>
-                                                <td> <span class="label label-success">Paid</span> </td>
+                                                <td>{{ employee.user.first_name }} {{ employee.user.last_name }}</td>
+                                                <td>#{{ employee.id }}</td>
+                                                <td>{{ employee.edcations.eduorg }}</td>
+                                                <td>{{ employee.edcations.specialty }}</td>
+                                                <td>{{ employee.edcations.dateend|date:"Y" }}</td>
+                                                <td> <span class="label label-warning">В поиске</span> </td>
                                                 <td>
                                                     <a href="javascript:void(0)" class="text-dark pr-10" data-toggle="tooltip" title="" data-original-title="Редактировать">
                                                         <i class="ti-marker-alt"></i>
@@ -196,12 +196,12 @@
 
                                         {% for employee in employees %}
                                             <tr>
-                                                <td>Minol Jov</td>
-                                                <td>#8457125</td>
-                                                <td>Shop</td>
-                                                <td>Sold</td>
-                                                <td>10-7-2019</td>
-                                                <td> <span class="label label-success">Paid</span> </td>
+                                                <td>{{ employee.user.first_name }} {{ employee.user.last_name }}</td>
+                                                <td>#{{ employee.id }}</td>
+                                                <td>{{ employee.edcations.eduorg }}</td>
+                                                <td>{{ employee.edcations.specialty }}</td>
+                                                <td>{{ employee.edcations.dateend|date:"Y" }}</td>
+                                                <td> <span class="label label-warning">В поиске</span> </td>
                                                 <td>
                                                     <a href="javascript:void(0)" class="text-dark pr-10" data-toggle="tooltip" title="" data-original-title="Редактировать">
                                                         <i class="ti-marker-alt"></i>
@@ -315,13 +315,12 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Специальность</label>
-                                                <select class="form-control">
-                                                    <option>Interested in</option>
-                                                    <option>design</option>
-                                                    <option>development</option>
-                                                    <option>illustration</option>
-                                                    <option>branding</option>
-                                                    <option>video</option>
+                                                {% get_specialites as specialites %}
+                                                <select class="form-control" name="spec">
+                                                    <option> Выберите специальность</option>
+                                                    {% for specialty in specialites %}
+                                                        <option value="{{ specialty.id }}">{{ specialty }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
@@ -330,57 +329,33 @@
                                     <h4 class="box-title text-info mt-15"><i class="ti-save mr-15"></i> Карьера</h4>
                                     <hr class="mb-15 mt-0">
                                     <div class="form-group">
-                                        <label>Company</label>
-                                        <input type="text" class="form-control" placeholder="Company Name">
+                                        <label>Название организации</label>
+                                        <input type="text" class="form-control" name="organization" placeholder="Название организации">
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Interested in</label>
-                                                <select class="form-control">
-                                                    <option>Interested in</option>
-                                                    <option>design</option>
-                                                    <option>development</option>
-                                                    <option>illustration</option>
-                                                    <option>branding</option>
-                                                    <option>video</option>
+                                                <label>Профессия</label>
+                                                {% get_professions as professions %}
+                                                <select class="form-control" name="profession">
+                                                    <option> Выберите профессию</option>
+                                                    {% for profession in professions %}
+                                                        <option value="{{ profession.id }}">{{ profession.name }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Budget</label>
-                                                <select class="form-control">
-                                                    <option>Budget</option>
-                                                    <option>less than 5000$</option>
-                                                    <option>5000$ - 10000$</option>
-                                                    <option>10000$ - 20000$</option>
-                                                    <option>more than 20000$</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Подтверждение данных об образование</label>
-                                        <label class="file">
-                                            <input type="file" id="file">
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>About Project</label>
-                                        <textarea rows="5" class="form-control" placeholder="About Project"></textarea>
-                                    </div>
-                                </div>
-                                <!-- /.box-body -->
-                                <div class="box-footer">
 
+                                    </div>
+
+                                </div>
+                                <div class="box-footer">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="ti-save-alt"></i> Сохранить
                                     </button>
                                 </div>
                             </form>
                         </div>
-                        <!-- /.box -->
                     </div>
                 </div>
             </section>

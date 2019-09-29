@@ -33,6 +33,18 @@ class DashBoardIndex(TemplateView):
 
 
 def create_employ(request):
-    if request.method.POST:
+    if request.method == 'POST':
         print(request.POST)
+        first_name = request.POST['firstname']
+        last_name = request.POST['lastname']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        vuz = request.POST['vuz']
+        organization = request.POST['organization']
+        profession = request.POST['profession']
+
+
+
+
+
     pass

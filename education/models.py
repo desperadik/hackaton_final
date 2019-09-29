@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 from core.models import AbstractOrg
 from hunter.models import Career
@@ -245,6 +245,3 @@ class Employee(models.Model):
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     edcations = models.ForeignKey(Education, on_delete=models.CASCADE)
     career = models.ForeignKey(Career, verbose_name="Карьера", blank=True, null=True, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.user
