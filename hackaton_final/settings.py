@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vacancy',
     'core',
+    'education',
+    'region',
+    'hunter'
 ]
 
 MIDDLEWARE = [
